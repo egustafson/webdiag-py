@@ -1,4 +1,6 @@
 FROM python:3-slim
+RUN apt update && apt upgrade -y
+RUN apt install -y net-tools
 WORKDIR /app
 COPY requirements.txt .
 COPY pyproject.toml .
