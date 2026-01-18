@@ -38,6 +38,6 @@ jobs:
       - name: Push container image to registry
         uses: redhat-actions/push-to-registry@v2
         with:
-          image: websb
-          tags: latest ${{ github.sha }}
-          registry: ghcr.io/${{ github.repository }}
+          image: webdiag
+          tags: latest ${{ github.sha }} ${{ github.ref_name }}
+          registry: ghcr.io/${{ github.repository_owner }}
