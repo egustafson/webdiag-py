@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -20,7 +20,7 @@ jobs:
         uses: redhat-actions/podman-install@main
 
       - name: Log in to the GitHub Container Registry
-        uses: redhat-action/podman-login@v1
+        uses: redhat-actions/podman-login@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -39,5 +39,3 @@ jobs:
           image: websb
           tags: latest ${{ github.sha }}
           registry: ghcr.io/${{ github.repository }}
-
-          
