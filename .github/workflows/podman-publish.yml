@@ -31,8 +31,8 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          image: websb
-          tags: latest ${{ github.sha }}
+          image: webdiag
+          tags: latest ${{ github.sha }} ${{ github.ref_name }}
           containerfiles: ./Containerfile
 
       - name: Push container image to registry
